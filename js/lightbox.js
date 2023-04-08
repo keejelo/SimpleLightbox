@@ -20,7 +20,7 @@
 <body>
 
     <!-- Lightbox thumbnail setup: start -->
-    
+
     <div id="lightbox-set">
 
         <a class="lightbox-thumbs" href="mypic1.jpg" rel="1" title="Nature">
@@ -38,7 +38,7 @@
         ... more of the same if you want..
 
     </div>
-    
+
     <!-- Lightbox thumbnail setup: end -->
 
 </body>
@@ -52,6 +52,7 @@ let SimpleLightbox = (function()
     // ** Global variables
     let g_modalPaddingTop = 60;
     let g_slideIndex = 1;
+    let g_log = true;
 
     // ** Open the Modal
     function openModal()
@@ -191,6 +192,13 @@ let SimpleLightbox = (function()
                 }
             }
         }
+        else
+        {
+            if(g_log)
+            {
+                console.log('Error, element with class not found: "lightbox-set"');
+            }
+        }
     };
 
     // ** Window resize event function
@@ -246,7 +254,10 @@ let SimpleLightbox = (function()
         }
         else
         {
-            console.log('Error, element with class not found: "lightbox-modal-close"');
+            if(g_log)
+            {
+                console.log('Error, element with class not found: "lightbox-modal-close"');
+            }
         }
 
         // ** Get all thumbnail elements (in "lightbox-set")
@@ -268,7 +279,10 @@ let SimpleLightbox = (function()
         }
         else
         {
-            console.log('Error, element with class not found: "lightbox-thumbs"');
+            if(g_log)
+            {
+                console.log('Error, element with class not found: "lightbox-thumbs"');
+            }
         }
 
         // ** Get all thumbnail elements in modalbox
@@ -286,7 +300,10 @@ let SimpleLightbox = (function()
         }
         else
         {
-            console.log('Error, element with class not found: "lightbox-modal-column"');
+            if(g_log)
+            {
+                console.log('Error, element with class not found: "lightbox-modal-column"');
+            }
         }
 
         let col2 = document.getElementsByClassName('lightbox-modal-column-last');
@@ -303,7 +320,10 @@ let SimpleLightbox = (function()
         }
         else
         {
-            console.log('Error, element with class not found: "lightbox-modal-column-last"');
+            if(g_log)
+            {
+                console.log('Error, element with class not found: "lightbox-modal-column-last"');
+            }
         }
 
         // ** Previous button event
@@ -317,7 +337,10 @@ let SimpleLightbox = (function()
         }
         else
         {
-            console.log('Error, element with class not found: "lightbox-modal-prev"');
+            if(g_log)
+            {
+                console.log('Error, element with class not found: "lightbox-modal-prev"');
+            }
         }
 
         // ** Next button event
@@ -331,7 +354,10 @@ let SimpleLightbox = (function()
         }
         else
         {
-            console.log('Error, element with class not found: "lightbox-modal-next"');
+            if(g_log)
+            {
+                console.log('Error, element with class not found: "lightbox-modal-next"');
+            }
         }
 
         // ** Get key press events
