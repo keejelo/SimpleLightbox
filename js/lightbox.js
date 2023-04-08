@@ -12,8 +12,8 @@
 <meta charset="utf-8" />
 <title>Simple Lightbox demo</title>
 
+<!-- Add the css and javascript files -->
 <link type="text/css" rel="stylesheet" media="all" href="css/lightbox.css" />
-
 <script type="text/javascript" src="js/lightbox.js"></script>
 
 </head>
