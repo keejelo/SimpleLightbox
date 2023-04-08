@@ -11,8 +11,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta charset="utf-8" />
 <title>Simple Lightbox demo</title>
+
 <link type="text/css" rel="stylesheet" media="all" href="css/lightbox.css" />
+
 <script type="text/javascript" src="js/lightbox.js"></script>
+
 </head>
 <body>
 
