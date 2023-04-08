@@ -1,0 +1,2 @@
+# SimpleLightbox
+Another Javascript lightbox
