@@ -10,7 +10,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta charset="utf-8" />
-<title>Simple Lightbox demo</title>
+<title>My page</title>
 
 <!-- Add the css and javascript files -->
 <link type="text/css" rel="stylesheet" media="all" href="css/lightbox.css" />
@@ -23,19 +23,19 @@
 
     <div id="lightbox-set">
 
-        <a class="lightbox-thumbs" href="mypic1.jpg" rel="1" title="Nature">
+        <a class="lightbox-thumbs" href="mypic1.jpg" title="Nature">
             <img src="mypic1.jpg" />
         </a>
 
-        <a class="lightbox-thumbs" href="mypic2.jpg" rel="2" title="City">
+        <a class="lightbox-thumbs" href="mypic2.jpg" title="City">
             <img src="mypic2.jpg" />
         </a>
 
-        <a class="lightbox-thumbs" href="mypic3.jpg" rel="3" title="Food">
+        <a class="lightbox-thumbs" href="mypic3.jpg" title="Food">
             <img src="mypic3.jpg" />
         </a>
 
-        ... more of the same if you want..
+        <!-- ... more of the same if you want.. -->
 
     </div>
 
@@ -153,10 +153,9 @@ let SimpleLightbox = (function()
             {
                 for(let i = 0; i < lightboxThumbs.length;i++)
                 {
-                    let slideNum = lightboxThumbs[i].getAttribute('rel');
+                    let slideNum = i + 1;
                     let slideSrc = lightboxThumbs[i].getAttribute('href');
                     let slideTitle = lightboxThumbs[i].getAttribute('title');
-
                     let slideThumbSrc = lightboxThumbs[i].getElementsByTagName('img')[0].getAttribute('src');
 
                     let div1 = document.createElement('div');
@@ -269,7 +268,7 @@ let SimpleLightbox = (function()
                 thumbs[i].addEventListener('click', function(e)
                 {
                     openModal();
-                    currentSlide(thumbs[i].getAttribute('rel'));
+                    currentSlide(i + 1);
                     e.stopPropagation();
                     e.cancelBubble = true;
                     e.preventDefault();
