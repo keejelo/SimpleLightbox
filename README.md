@@ -1,6 +1,5 @@
 # SimpleLightbox
 Just another Javascript lightbox
 
-Try it here:
-
+Try it here: <br>
 https://keejelo.github.io/SimpleLightbox/demo.html
