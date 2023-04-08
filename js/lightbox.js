@@ -19,6 +19,8 @@
 </head>
 <body>
 
+    <!-- Lightbox thumbnail setup: start -->
+    
     <div id="lightbox-set">
 
         <a class="lightbox-thumbs" href="mypic1.jpg" rel="1" title="Nature">
@@ -36,6 +38,8 @@
         ... more of the same if you want..
 
     </div>
+    
+    <!-- Lightbox thumbnail setup: end -->
 
 </body>
 </html>
