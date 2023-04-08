@@ -52,7 +52,7 @@ let SimpleLightbox = (function()
     // ** Global variables
     let g_modalPaddingTop = 60;
     let g_slideIndex = 1;
-    let g_log = true;
+    let g_log = false;
 
     // ** Open the Modal
     function openModal()
