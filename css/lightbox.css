@@ -10,7 +10,7 @@
 }
 .lightbox-thumbs img
 {
-    /*border:1px #666 solid;*/
+    border:1px #666 solid;
     width:100px;
     height:60px;
 }
@@ -79,7 +79,7 @@
 .lightbox-modal-next
 {
     cursor:pointer;
-    position:absolute;
+    position:fixed; /* absolute */
     top:50%;
     width:auto;
     padding:16px;
@@ -93,6 +93,11 @@
     -webkit-user-select:none;
 }
 
+/* Position the "prev button" to the left */
+.lightbox-modal-prev
+{
+    left:0;
+}
 /* Position the "next button" to the right */
 .lightbox-modal-next
 {
@@ -216,4 +221,3 @@ img.lightbox-hover-shadow
 {
     cursor:pointer;
 }
-
