@@ -76,7 +76,7 @@ let SimpleLightbox = (function()
         if (n > slides.length) {g_slideIndex = 1;}
         if (n < 1) {g_slideIndex = slides.length;}
         showSlides(g_slideIndex);
-        onResize();
+        //onResize();
     };
     function prevSlide()
     {
@@ -85,14 +85,14 @@ let SimpleLightbox = (function()
         if (n > slides.length) {g_slideIndex = 1;}
         if (n < 1) {g_slideIndex = slides.length;}
         showSlides(g_slideIndex);
-        onResize();
+        //onResize();
     };
 
     // ** Thumbnail image controls
     function currentSlide(n)
     {
         showSlides(g_slideIndex = n);
-        onResize();
+        //onResize();
     };
 
     // ** Work function
