@@ -11,19 +11,39 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta charset="utf-8" />
-<title>My page</title>
-
-<!-- Add the lightbox css and javascript files -->
+<title>Simple Lightbox demo</title>
+<style>
+body
+{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:16px;
+}
+.lightbox-thumbs
+{
+    padding-right:25px;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+}
+.lightbox-thumbs img
+{
+    border:1px #666 solid;
+    width:100px;
+    height:60px;
+}
+</style>
 <link type="text/css" rel="stylesheet" media="all" href="css/lightbox.css" />
 <script type="text/javascript" src="js/lightbox.js"></script>
-
 </head>
 <body>
     <div>
-        <a class="lightbox-thumbs" href="mypic1.jpg" title="Nature"><img src="mypic1.jpg" /></a>        
-        <a class="lightbox-thumbs" href="mypic2.jpg" title="City"><img src="mypic2.jpg" /></a>        
-        <a class="lightbox-thumbs" href="mypic3.jpg" title="Food"><img src="mypic3.jpg" /></a>        
-        <!-- ... more.. -->
+        <h3>Simple Lightbox demo</h3>
+        <p>Click on an image to open the lightbox</p>        
+        <a class="lightbox-thumbs" href="img/1.jpg" title="Lights"><img src="img/1.jpg" /></a>
+        <a class="lightbox-thumbs" href="img/2.jpg" title="Nature"><img src="img/2.jpg" /></a>
+        <a class="lightbox-thumbs" href="img/3.jpg" title="Snow"><img src="img/3.jpg" /></a>
+        <a class="lightbox-thumbs" href="img/4.jpg" title="Mountains"><img src="img/4.jpg" /></a>        
+        <!-- ...more.. -->        
     </div>
 </body>
 </html>
