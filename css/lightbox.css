@@ -203,8 +203,8 @@ img.lightbox-modal-thumbs
     display:block;
 }
 
-.lightbox-modal-active,
-.lightbox-modal-thumbs:hover
+img.lightbox-modal-active,
+img.lightbox-modal-thumbs:hover
 {
     opacity:1;
 }
