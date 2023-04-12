@@ -1,5 +1,5 @@
 /*****************************************************************************************************
-// ** Simple Lightbox - 1.03
+// ** Simple Lightbox - 1.02
 //    Original source: https://www.w3schools.com/howto/howto_js_lightbox.asp
 //    Modified by me to be more responsive, flexible, easier to setup and implement.
 //
@@ -316,6 +316,7 @@ let SimpleLightbox = (function()
             }
         }
 
+        // ** Get the last thumbnail element in modalbox
         let col2 = document.getElementsByClassName('lightbox-modal-column-last');
         if(col2[0])
         {
