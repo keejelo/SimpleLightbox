@@ -1,5 +1,5 @@
 /*****************************************************************************************************
-// ** Simple Lightbox - 1.03
+// ** Simple Lightbox - 1.04
 //    Original source: https://www.w3schools.com/howto/howto_js_lightbox.asp
 //    Modified by me to be more responsive, flexible, easier to setup and implement.
 //
@@ -56,7 +56,7 @@ let SimpleLightbox = (function()
     // ** Global variables
     let g_modalPaddingTop = 60;
     let g_slideIndex = 1;
-    let g_log = false;
+    let g_debug = false;
 
     // ** Open the Modal
     function openModal()
@@ -194,7 +194,7 @@ let SimpleLightbox = (function()
         }
         else
         {
-            if(g_log)
+            if(g_debug)
             {
                 if(!lightboxThumbs[0])
                 {
@@ -264,7 +264,7 @@ let SimpleLightbox = (function()
         }
         else
         {
-            if(g_log)
+            if(g_debug)
             {
                 console.log('Error, element with class not found: "lightbox-modal-close"');
             }
@@ -289,7 +289,7 @@ let SimpleLightbox = (function()
         }
         else
         {
-            if(g_log)
+            if(g_debug)
             {
                 console.log('Error, element with class not found: "lightbox-thumbs"');
             }
@@ -310,7 +310,7 @@ let SimpleLightbox = (function()
         }
         else
         {
-            if(g_log)
+            if(g_debug)
             {
                 console.log('Error, element with class not found: "lightbox-modal-column"');
             }
@@ -331,7 +331,7 @@ let SimpleLightbox = (function()
         }
         else
         {
-            if(g_log)
+            if(g_debug)
             {
                 console.log('Error, element with class not found: "lightbox-modal-column-last"');
             }
@@ -348,7 +348,7 @@ let SimpleLightbox = (function()
         }
         else
         {
-            if(g_log)
+            if(g_debug)
             {
                 console.log('Error, element with class not found: "lightbox-modal-prev"');
             }
@@ -365,7 +365,7 @@ let SimpleLightbox = (function()
         }
         else
         {
-            if(g_log)
+            if(g_debug)
             {
                 console.log('Error, element with class not found: "lightbox-modal-next"');
             }
