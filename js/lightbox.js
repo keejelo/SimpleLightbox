@@ -1,5 +1,5 @@
 /*****************************************************************************************************
-// ** Simple Lightbox - 1.02
+// ** Simple Lightbox - 1.03
 //    Original source: https://www.w3schools.com/howto/howto_js_lightbox.asp
 //    Modified by me to be more responsive, flexible, easier to setup and implement.
 //
@@ -38,12 +38,12 @@ body
 <body>
     <div>
         <h3>Simple Lightbox demo</h3>
-        <p>Click on an image to open the lightbox</p>        
+        <p>Click on an image to open the lightbox</p>
         <a class="lightbox-thumbs" href="img/1.jpg" title="Lights"><img src="img/1.jpg" /></a>
         <a class="lightbox-thumbs" href="img/2.jpg" title="Nature"><img src="img/2.jpg" /></a>
         <a class="lightbox-thumbs" href="img/3.jpg" title="Snow"><img src="img/3.jpg" /></a>
-        <a class="lightbox-thumbs" href="img/4.jpg" title="Mountains"><img src="img/4.jpg" /></a>        
-        <!-- ...more.. -->        
+        <a class="lightbox-thumbs" href="img/4.jpg" title="Mountains"><img src="img/4.jpg" /></a>
+        <!-- ...more.. -->
     </div>
 </body>
 </html>
@@ -122,7 +122,7 @@ let SimpleLightbox = (function()
         captionText.innerHTML = thumbs[g_slideIndex-1].title;
         captionText.innerHTML = captionText.innerHTML.replace(/\\n/g, '<br>');
         captionText.innerHTML = captionText.innerHTML.replace(/\\r\\n/g, '<br>');
-        
+
         // ** Check imagesize and screensize, make adjustment
         onResize();
     };
@@ -130,90 +130,92 @@ let SimpleLightbox = (function()
     // ** Create modal lightbox
     function createModal()
     {
-        // ** Create the modal container
-        //let lightboxSet = document.getElementById('lightbox-set');
+        let lightboxModal = '<div id="lightbox-modal" class="lightbox-modal-class">' +
+                            '   <span class="lightbox-modal-close lightbox-cursor">&times;</span>' +
+                            '   <div class="lightbox-modal-content">' +
+                            '       <a class="lightbox-modal-prev">&#10094;</a>' +
+                            '       <a class="lightbox-modal-next">&#10095;</a>' +
+                            '       <div id="lightbox-modal-slides-container"></div>' +
+                            '       <div class="lightbox-modal-caption-container">' +
+                            '           <p id="lightbox-modal-caption"></p>' +
+                            '       </div>' +
+                            '       <div id="lightbox-modal-thumbs-container"></div>' +
+                            '   </div>'+
+                            '</div>';
 
-        //if(lightboxSet)
-        //{
-            let lightboxModal = '<div id="lightbox-modal" class="lightbox-modal-class">' +
-                                '   <span class="lightbox-modal-close lightbox-cursor">&times;</span>' +
-                                '   <div class="lightbox-modal-content">' +
-                                '       <a class="lightbox-modal-prev">&#10094;</a>' +
-                                '       <a class="lightbox-modal-next">&#10095;</a>' +
-                                '       <div id="lightbox-modal-slides-container"></div>' +
-                                '       <div class="lightbox-modal-caption-container">' +
-                                '           <p id="lightbox-modal-caption"></p>' +
-                                '       </div>' +
-                                '       <div id="lightbox-modal-thumbs-container"></div>' +
-                                '   </div>'+
-                                '</div>';
+        // ** Insert into element
+        document.getElementsByTagName('body')[0].innerHTML += lightboxModal;
 
-            // ** Insert into element
-            //lightboxSet.innerHTML += lightboxModal;
-            document.getElementsByTagName('body')[0].innerHTML += lightboxModal;
+        // ** Create content
+        let lightboxThumbs = document.getElementsByClassName('lightbox-thumbs');
+        let lightboxSlides = document.getElementById('lightbox-modal-slides-container');
+        let lightboxModalThumbs = document.getElementById('lightbox-modal-thumbs-container');
 
-            // ** Create content
-            //let lightboxThumbs = lightboxSet.getElementsByClassName('lightbox-thumbs');
-            let lightboxThumbs = document.getElementsByClassName('lightbox-thumbs');
-            let lightboxSlides = document.getElementById('lightbox-modal-slides-container');
-            let lightboxModalThumbs = document.getElementById('lightbox-modal-thumbs-container');
-
-            if(lightboxThumbs[0] && lightboxSlides && lightboxModalThumbs)
+        if(lightboxThumbs[0] && lightboxSlides && lightboxModalThumbs)
+        {
+            for(let i = 0; i < lightboxThumbs.length;i++)
             {
-                for(let i = 0; i < lightboxThumbs.length;i++)
+                let slideNum = i + 1;
+                let slideSrc = lightboxThumbs[i].getAttribute('href');
+                let slideTitle = lightboxThumbs[i].getAttribute('title');
+                let slideThumbSrc = lightboxThumbs[i].getElementsByTagName('img')[0].getAttribute('src');
+
+                let div1 = document.createElement('div');
+                div1.setAttribute('class','lightbox-modal-slides');
+                lightboxSlides.appendChild(div1);
+
+                let div2 = document.createElement('div');
+                div2.setAttribute('class','lightbox-modal-numbertext');
+                div1.appendChild(div2);
+                div2.innerHTML = slideNum + ' / ' + lightboxThumbs.length;
+
+                let img1 = document.createElement('img');
+                img1.setAttribute('src', slideSrc);
+                div1.appendChild(img1);
+
+                let div3 = document.createElement('div');
+                if(i == lightboxThumbs.length-1)
                 {
-                    let slideNum = i + 1;
-                    let slideSrc = lightboxThumbs[i].getAttribute('href');
-                    let slideTitle = lightboxThumbs[i].getAttribute('title');
-                    let slideThumbSrc = lightboxThumbs[i].getElementsByTagName('img')[0].getAttribute('src');
+                    div3.setAttribute('class','lightbox-modal-column-last');
+                }
+                else
+                {
+                    div3.setAttribute('class','lightbox-modal-column');
+                }
+                lightboxModalThumbs.appendChild(div3);
 
-                    let div1 = document.createElement('div');
-                    div1.setAttribute('class','lightbox-modal-slides');
-                    lightboxSlides.appendChild(div1);
-
-                    let div2 = document.createElement('div');
-                    div2.setAttribute('class','lightbox-modal-numbertext');
-                    div1.appendChild(div2);
-                    div2.innerHTML = slideNum + ' / ' + lightboxThumbs.length;
-
-                    let img1 = document.createElement('img');
-                    img1.setAttribute('src', slideSrc);
-                    div1.appendChild(img1);
-
-                    let div3 = document.createElement('div');
-                    if(i == lightboxThumbs.length-1)
-                    {
-                        div3.setAttribute('class','lightbox-modal-column-last');
-                    }
-                    else
-                    {
-                        div3.setAttribute('class','lightbox-modal-column');
-                    }
-                    lightboxModalThumbs.appendChild(div3);
-
-                    let img2 = document.createElement('img');
-                    img2.setAttribute('class', 'lightbox-modal-thumbs');
-                    img2.setAttribute('title', slideTitle);
-                    img2.setAttribute('alt', slideNum);
-                    img2.setAttribute('src', slideThumbSrc);
-                    div3.appendChild(img2);
+                let img2 = document.createElement('img');
+                img2.setAttribute('class', 'lightbox-modal-thumbs');
+                img2.setAttribute('title', slideTitle);
+                img2.setAttribute('alt', slideNum);
+                img2.setAttribute('src', slideThumbSrc);
+                div3.appendChild(img2);
+            }
+        }
+        else
+        {
+            if(g_log)
+            {
+                if(!lightboxThumbs[0])
+                {
+                    console.log('Error, element with class not found: "lightbox-thumbs"');
+                }
+                if(!lightboxSlides)
+                {
+                    console.log('Error, element with id not found: "lightbox-modal-slides-container"');
+                }
+                if(!lightboxModalThumbs)
+                {
+                    console.log('Error, element with id not found: "lightbox-modal-thumbs-container"');
                 }
             }
-        //}
-        //else
-        //{
-        //    if(g_log)
-        //    {
-        //        console.log('Error, element with class not found: "lightbox-set"');
-        //    }
-        //}
+        }
     };
 
     // ** Window resize event function
     function onResize()
     {
         let modalPaddingTop = g_modalPaddingTop;
-
         let slides = document.getElementsByClassName('lightbox-modal-slides');
         let modal = document.getElementsByClassName('lightbox-modal-class');
         let caption = document.getElementsByClassName('lightbox-modal-caption-container');
@@ -268,7 +270,7 @@ let SimpleLightbox = (function()
             }
         }
 
-        // ** Get all thumbnail elements (in "lightbox-set")
+        // ** Get all thumbnail elements, class "lightbox-thumbs"
         let thumbs = document.getElementsByClassName('lightbox-thumbs');
         if(thumbs[0])
         {
