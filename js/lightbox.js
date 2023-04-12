@@ -1,5 +1,5 @@
 /*****************************************************************************************************
-// ** Simple Lightbox - 1.04
+// ** Simple Lightbox - 1.05
 //    Original source: https://www.w3schools.com/howto/howto_js_lightbox.asp
 //    Modified by me to be more responsive, flexible, easier to setup and implement.
 //
@@ -114,11 +114,11 @@ let SimpleLightbox = (function()
 
         for (i = 0; i < thumbs.length; i++)
         {
-            thumbs[i].className = thumbs[i].className.replace(' active', '');
+            thumbs[i].className = thumbs[i].className.replace(' lightbox-modal-active', '');
         }
 
         slides[g_slideIndex-1].style.display = 'block';
-        thumbs[g_slideIndex-1].className += ' active';
+        thumbs[g_slideIndex-1].className += ' lightbox-modal-active';
         captionText.innerHTML = thumbs[g_slideIndex-1].title;
         captionText.innerHTML = captionText.innerHTML.replace(/\\n/g, '<br>');
         captionText.innerHTML = captionText.innerHTML.replace(/\\r\\n/g, '<br>');
