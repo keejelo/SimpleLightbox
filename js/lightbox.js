@@ -1,5 +1,5 @@
 /*****************************************************************************************************
-// ** Simple Lightbox - 1.05
+// ** Simple Lightbox - 1.06
 //    Original source: https://www.w3schools.com/howto/howto_js_lightbox.asp
 //    Modified by me to be more responsive, flexible, easier to setup and implement.
 //
