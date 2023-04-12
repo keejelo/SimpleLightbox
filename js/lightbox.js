@@ -21,23 +21,22 @@
 <body>
 
     <div>
-
+    
         <a class="lightbox-thumbs" href="mypic1.jpg" title="Nature">
             <img src="mypic1.jpg" />
-        </a>
-
+        </a>        
+        
         <a class="lightbox-thumbs" href="mypic2.jpg" title="City">
             <img src="mypic2.jpg" />
         </a>
-
+        
         <a class="lightbox-thumbs" href="mypic3.jpg" title="Food">
             <img src="mypic3.jpg" />
         </a>
-
-        <!-- ... more of the same if you want.. -->
-
+        
+        <!-- ... more thumbs.. -->
+        
     </div>
-
 
 </body>
 </html>
