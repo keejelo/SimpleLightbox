@@ -1,7 +1,7 @@
 @charset "utf-8";
 
-/* Thumbnails outside modal */
-.lightbox-thumbs
+/* Thumbnails outside modal (disabled here, it is better to style these as you want in other css file etc.) */
+/*.lightbox-thumbs
 {
     padding-right:25px;
     text-decoration:none;
@@ -13,7 +13,7 @@
     border:1px #666 solid;
     width:100px;
     height:60px;
-}
+}*/
 
 /* The Modal (background) */
 .lightbox-modal-class
