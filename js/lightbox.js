@@ -1,5 +1,5 @@
 /*****************************************************************************************************
-// ** Simple Lightbox - 1.06
+// ** Simple Lightbox - 1.07
 //    Original source: https://www.w3schools.com/howto/howto_js_lightbox.asp
 //    Modified by me to be more responsive, flexible, easier to setup and implement.
 //
@@ -241,6 +241,21 @@ let SimpleLightbox = (function()
                         modal[0].style.paddingTop = g_modalPaddingTop + 'px';
                         caption[0].style.visibility = 'visible';
                         thumbs.style.visibility = 'visible';
+                    }
+
+                    // ** Check for vertical scrollbar, and adjust next button position accordingly
+                    let scrollbarWidth = window.innerWidth - modal[0].clientWidth;
+                    let next = document.getElementsByClassName('lightbox-modal-next');
+                    if (window.innerWidth > modal[0].clientWidth)
+                    {
+                        if(next[0])
+                        {
+                            next[0].style.right = scrollbarWidth + 'px';
+                        }
+                    }
+                    else
+                    {
+                        next[0].style.right = '0';
                     }
                 }
             }
