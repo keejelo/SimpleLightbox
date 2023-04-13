@@ -183,7 +183,7 @@
 .lightbox-modal-column
 {
     width:100px;
-    border:1px #888 solid;
+    border:1px #282828 solid;
     border-right:none;
     cursor:pointer;
     /*float:left;*/
@@ -192,7 +192,7 @@
 .lightbox-modal-column-last
 {
     width:100px;
-    border:1px #888 solid;
+    border:1px #282828 solid;
     cursor:pointer;
     display:table-cell;
 }
